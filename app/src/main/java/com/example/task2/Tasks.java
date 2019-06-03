@@ -7,11 +7,13 @@ public class Tasks {
         private String requirement;
         private String people;
         private String task;
+        private String taskdate;
         private String time_assigned;
         private String time_work;
         private String task_duration;
+        private String status;
 
-    public Tasks(String slip_no, String customer_name, String requirement, String people, String task, String time_assigned, String time_work, String task_duration) {
+    public Tasks(String taskdate,String slip_no, String customer_name, String requirement, String people, String task, String time_assigned, String time_work, String task_duration,String status) {
         this.slip_no = slip_no;
         this.customer_name = customer_name;
         this.requirement = requirement;
@@ -20,6 +22,8 @@ public class Tasks {
         this.time_assigned = time_assigned;
         this.time_work = time_work;
         this.task_duration = task_duration;
+        this.taskdate  = taskdate;
+        this.status = status;
     }
 
     public String getSlip_no() {
@@ -54,6 +58,16 @@ public class Tasks {
         return task_duration;
     }
 
+    public String getTaskdate() {
+        return taskdate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) { this.status = status; }
+
     public void setSlip_no(String slip_no) {
         this.slip_no = slip_no;
     }
@@ -84,5 +98,8 @@ public class Tasks {
 
     public void setTask_duration(String task_duration) {
         this.task_duration = task_duration;
+    }
+    public void setTaskdate(String task_duration) {
+        this.taskdate= taskdate;
     }
 }

@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recy);
         tasks=new ArrayList<>();
 
-        tasks=db.getTripData();
         mAdapter = new MyAdapter(getApplicationContext(), tasks);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         //for the divider

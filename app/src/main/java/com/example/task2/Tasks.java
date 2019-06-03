@@ -2,31 +2,87 @@ package com.example.task2;
 
 public class Tasks {
 
-        public String name;
-        public float distance;
-        public String duration;
+        private String slip_no;
+        private String customer_name;
+        private String requirement;
+        private String people;
+        private String task;
+        private String time_assigned;
+        private String time_work;
+        private String task_duration;
 
-        public String getName() {
-            return name;
-        }
+    public Tasks(String slip_no, String customer_name, String requirement, String people, String task, String time_assigned, String time_work, String task_duration) {
+        this.slip_no = slip_no;
+        this.customer_name = customer_name;
+        this.requirement = requirement;
+        this.people = people;
+        this.task = task;
+        this.time_assigned = time_assigned;
+        this.time_work = time_work;
+        this.task_duration = task_duration;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public String getSlip_no() {
+        return slip_no;
+    }
 
-        public float getDistance() {
-            return distance;
-        }
+    public String getCustomer_name() {
+        return customer_name;
+    }
 
-        public void setDistance(float distance) {
-            this.distance = distance;
-        }
+    public String getRequirement() {
+        return requirement;
+    }
 
-        public String getDuration() {
-            return duration;
-        }
+    public String getPeople() {
+        return people;
+    }
 
-        public void setDuration(String duration) {
-            this.duration = duration;
-        }
+    public String getTask() {
+        return task;
+    }
+
+    public String getTime_assigned() {
+        return time_assigned;
+    }
+
+    public String getTime_work() {
+        return time_work;
+    }
+
+    public String getTask_duration() {
+        return task_duration;
+    }
+
+    public void setSlip_no(String slip_no) {
+        this.slip_no = slip_no;
+    }
+
+    public void setCustomer_name(String customer_name) {
+        this.customer_name = customer_name;
+    }
+
+    public void setRequirement(String requirement) {
+        this.requirement = requirement;
+    }
+
+    public void setPeople(String people) {
+        this.people = people;
+    }
+
+    public void setTask(String task) {
+        this.task = task;
+    }
+
+    public void setTime_assigned(String time_assigned) {
+        this.time_assigned = time_assigned;
+    }
+
+    public void setTime_work(String time_work) {
+        this.time_work = time_work;
+    }
+
+    public void setTask_duration(String task_duration) {
+        this.task_duration = task_duration;
+    }
 }

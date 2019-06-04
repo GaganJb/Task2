@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailSctivity"
-    android:orientation="vertical"
     >
-<TextView
-    android:layout_marginTop="40dp"
-    android:text="@string/app_name"
-    android:id="@+id/name"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    </androidx.appcompat.widget.Toolbar>
+<com.google.android.material.tabs.TabLayout
+    android:id="@+id/tabviewlay"
     android:layout_width="match_parent"
-    android:layout_height="30dp"
-    android:gravity="center"/>
-</LinearLayout>
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/toolbary"
+    android:background="@color/colorPrimary"
+    app:tabMode="fixed"
+    app:tabTextColor="#FFFFFF"
+    app:tabGravity="fill">
+</com.google.android.material.tabs.TabLayout>
+<androidx.viewpager.widget.ViewPager
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/viewpager"
+    android:layout_below="@id/tabviewlay"
+    >
+
+</androidx.viewpager.widget.ViewPager>
+
+</RelativeLayout>

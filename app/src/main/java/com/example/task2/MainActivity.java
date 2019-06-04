@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
     Tasks taskobj, taskobj2, taskobj3, taskobj4;
     UpdateModel model1,model2,model3,model4;
     List<UpdateModel> updateModelList;
+
+    PuchaseModel pmodel1,pmodel2,pmodel3,pmodel4;
+    List<PuchaseModel> puchaseModelList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,17 +36,19 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         recyclerView = findViewById(R.id.recy);
         tasks = new ArrayList<>();
         updateModelList=new ArrayList<>();
+        puchaseModelList=new ArrayList<>();
 
-        model1=new UpdateModel("123", "#12222", "12/2/12", "IN DUE", "22/22/19", "cse",
+
+        model1=new UpdateModel("123", "#122", "12/2/12", "IN DUE", "22/22/19", "cse",
                                 "Hir", "dd");
 
-        model2=new UpdateModel("321", "#123", "15/2/12", "INVOICE", "31/22/19", "ece",
+        model2=new UpdateModel("124", "#122", "15/2/12", "INVOICE", "31/22/19", "ece",
                 "Hira", "ff");
 
-        model3=new UpdateModel("333", "#12322", "14/2/12", "DONE", "31/12/19", "me",
+        model3=new UpdateModel("125", "#122", "14/2/12", "DONE", "31/12/19", "me",
                 "Gagan", "Hiraa");
 
-        model4=new UpdateModel("12322", "#121222", "11/2/12", "OK", "21/22/19", "eie",
+        model4=new UpdateModel("126", "#122", "11/2/12", "OK", "21/22/19", "eie",
                 "Hirak", "oo");
 
         updateModelList.add(model1);
@@ -50,29 +56,43 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         updateModelList.add(model3);
         updateModelList.add(model4);
 
+        pmodel1=new PuchaseModel("123", "11/11/11", "we", "23/11",
+                "2300", "OK", "done");
+        pmodel2=new PuchaseModel("111", "21/11/11", "were", "23/122",
+                "3300", "NOT OK", "NOT done");
+        pmodel3=new PuchaseModel("111", "21/11/11", "were", "23/122",
+                "3300", "NOT OK", "NOT done");
+        pmodel4=new PuchaseModel("111", "21/11/11", "were", "23/122",
+                "3300", "NOT OK", "NOT done");
+
+        puchaseModelList.add(pmodel1);
+        puchaseModelList.add(pmodel2);
+        puchaseModelList.add(pmodel3);
+        puchaseModelList.add(pmodel4);
+
         taskobj = new Tasks("12/03/19", "#2234", "Hirak Borah",
                 "Furniture Repairement",
                 "Gagan, Vaibhav, Hirak",
                 "Furniture Repairement", "14/03/19", "15/03/19", "3 days"
-                , "FEEDBACK", updateModelList);
+                , "FEEDBACK", updateModelList, puchaseModelList);
 
         taskobj2 = new Tasks("23/03/19", "#2235", "Gagan Baishya",
                 "Electrical Board",
                 "Gagan, Vaibhav, Hirak",
                 "Electrician", "24/03/19", "25/03/19", "2 days"
-                , "WORK DUE",new ArrayList<UpdateModel>());
+                , "WORK DUE",new ArrayList<UpdateModel>(), new ArrayList<PuchaseModel>());
 
         taskobj3 = new Tasks("1/04/19", "#2236", "Padmanabha Bhattacharya",
                 "Carpentry for lock repairing",
                 "Gagan, Himangshu, Hirak",
                 "Fire Management", "2/04/19", "3/04/19", "1 days"
-                , "PAYMENT",new ArrayList<UpdateModel>());
+                , "PAYMENT",new ArrayList<UpdateModel>(), new ArrayList<PuchaseModel>());
 
         taskobj4 = new Tasks("12/04/19", "#2237", "Anushree Goswami",
                 "Blind for 3 window",
                 "Hirak",
                 "Fire Management", "2/04/19", "3/04/19", "1 days"
-                , "PAYMENT",new ArrayList<UpdateModel>());
+                , "PAYMENT",new ArrayList<UpdateModel>(), new ArrayList<PuchaseModel>());
 
         tasks.add(taskobj);
         tasks.add(taskobj2);
@@ -98,7 +118,13 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         Bundle bundle=new Bundle();
         bundle.putSerializable("ARRAYLIST",(Serializable)tasks1.getUpdateModelList());
         intent.putExtra("BUNDLE",bundle);
+
+        Bundle bundle1=new Bundle();
+        bundle1.putSerializable("ARRAYLIST1",(Serializable)tasks1.getPuchaseModelList());
+        intent.putExtra("BUNDLE1",bundle1);
         startActivity(intent);
+
+
     }
 
     @Override

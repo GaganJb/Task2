@@ -15,8 +15,9 @@ public class Tasks {
         private String task_duration;
         private String status;
         private List<UpdateModel> updateModelList;
+        private List<PuchaseModel>  puchaseModelList;
 
-    public Tasks(String taskdate,String slip_no, String customer_name, String requirement, String people, String task, String time_assigned, String time_work, String task_duration,String status,List<UpdateModel> updateModelList) {
+    public Tasks(String taskdate,String slip_no, String customer_name, String requirement, String people, String task, String time_assigned, String time_work, String task_duration,String status,List<UpdateModel> updateModelList, List<PuchaseModel> puchaseModelList) {
         this.slip_no = slip_no;
         this.customer_name = customer_name;
         this.requirement = requirement;
@@ -28,6 +29,7 @@ public class Tasks {
         this.taskdate  = taskdate;
         this.status = status;
         this.updateModelList = updateModelList;
+        this.puchaseModelList = puchaseModelList;
     }
 
     public String getSlip_no() {
@@ -72,6 +74,10 @@ public class Tasks {
 
     public List<UpdateModel> getUpdateModelList() {
         return updateModelList;
+    }
+
+    public List<PuchaseModel> getPuchaseModelList() {
+        return puchaseModelList;
     }
 
     public void setUpdateModelList(List<UpdateModel> updateModelList) { this.updateModelList = updateModelList; }

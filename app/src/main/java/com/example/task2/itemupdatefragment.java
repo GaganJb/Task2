@@ -21,13 +21,11 @@ public class itemupdatefragment extends Fragment {
 
     RecyclerView recyclerView;
     MyAdapter2 myAdapter2;
-    List<UpdateModel> updateModelList;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.item_updates,container,false);
-
-        updateModelList=new ArrayList<>();
 
         Intent intent = getActivity().getIntent();
         Bundle args = intent.getBundleExtra("BUNDLE");

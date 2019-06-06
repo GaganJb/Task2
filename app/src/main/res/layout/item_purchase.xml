@@ -19,13 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Purchases"
-            android:textSize="25sp" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview1"
             android:layout_width="match_parent"

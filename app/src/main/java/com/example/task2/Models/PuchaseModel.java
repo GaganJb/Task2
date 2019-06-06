@@ -1,4 +1,4 @@
-package com.example.task2;
+package com.example.task2.Models;
 
 import java.io.Serializable;
 

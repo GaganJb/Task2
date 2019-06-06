@@ -1,4 +1,4 @@
-package com.example.task2;
+package com.example.task2.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.task2.Adapters.MyAdapter3;
+import com.example.task2.Models.PuchaseModel;
+import com.example.task2.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class itempurcfragment extends Fragment {
    public itempurcfragment(){}

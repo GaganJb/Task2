@@ -1,4 +1,4 @@
-package com.example.task2;
+package com.example.task2.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,13 +10,19 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.task2.Adapters.MyAdapter;
+import com.example.task2.Models.CommentModel;
+import com.example.task2.Models.PuchaseModel;
+import com.example.task2.R;
+import com.example.task2.Models.Tasks;
+import com.example.task2.Models.UpdateModel;
 import com.kinda.alert.KAlertDialog;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemClickListener {
+public class TaskActivity extends AppCompatActivity implements MyAdapter.OnItemClickListener {
     RecyclerView recyclerView;
     MyAdapter mAdapter;
     List<Tasks> tasks;
@@ -27,16 +33,20 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
     PuchaseModel pmodel1,pmodel2,pmodel3,pmodel4;
     List<PuchaseModel> puchaseModelList;
 
+    CommentModel cmodel1,cmodel2,cmodel3,cmodel4,cmoddel5;
+    List<CommentModel> commentModelList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_task);
 
         recyclerView = findViewById(R.id.recy);
         tasks = new ArrayList<>();
         updateModelList=new ArrayList<>();
         puchaseModelList=new ArrayList<>();
+        commentModelList=new ArrayList<>();
 
 
         model1=new UpdateModel("123", "#122", "12/2/12", "IN DUE", "22/22/19", "cse",
@@ -70,29 +80,42 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         puchaseModelList.add(pmodel3);
         puchaseModelList.add(pmodel4);
 
+
+        cmodel1=new CommentModel("Hirak", "I am humungasour", "04:09pm");
+        cmodel2=new CommentModel("Gagan", "I am heatblast.", "09:00am");
+        cmodel3=new CommentModel("Vaibhav", "I am DiamondHead", "23:99PM");
+        cmodel4=new CommentModel("Anushree", "I am Accelarator", "23:99PM");
+        cmoddel5=new CommentModel("Vaibhav", "I am Ghostfreak", "23:99PM");
+
+        commentModelList.add(cmodel1);
+        commentModelList.add(cmodel2);
+        commentModelList.add(cmodel3);
+        commentModelList.add(cmodel4);
+        commentModelList.add(cmoddel5);
+
         taskobj = new Tasks("12/03/19", "#2234", "Hirak Borah",
                 "Furniture Repairement",
                 "Gagan, Vaibhav, Hirak",
                 "Furniture Repairement", "14/03/19", "15/03/19", "3 days"
-                , "FEEDBACK", updateModelList, puchaseModelList);
+                , "FEEDBACK", updateModelList, puchaseModelList, commentModelList);
 
         taskobj2 = new Tasks("23/03/19", "#2235", "Gagan Baishya",
                 "Electrical Board",
                 "Gagan, Vaibhav, Hirak",
                 "Electrician", "24/03/19", "25/03/19", "2 days"
-                , "WORK DUE",new ArrayList<UpdateModel>(), new ArrayList<PuchaseModel>());
+                , "WORK DUE",new ArrayList<UpdateModel>(), new ArrayList<PuchaseModel>(), new ArrayList<CommentModel>());
 
         taskobj3 = new Tasks("1/04/19", "#2236", "Padmanabha Bhattacharya",
                 "Carpentry for lock repairing",
                 "Gagan, Himangshu, Hirak",
                 "Fire Management", "2/04/19", "3/04/19", "1 days"
-                , "PAYMENT",new ArrayList<UpdateModel>(), new ArrayList<PuchaseModel>());
+                , "PAYMENT",new ArrayList<UpdateModel>(), new ArrayList<PuchaseModel>(), new ArrayList<CommentModel>());
 
         taskobj4 = new Tasks("12/04/19", "#2237", "Anushree Goswami",
                 "Blind for 3 window",
                 "Hirak",
                 "Fire Management", "2/04/19", "3/04/19", "1 days"
-                , "PAYMENT",new ArrayList<UpdateModel>(), new ArrayList<PuchaseModel>());
+                , "PAYMENT",new ArrayList<UpdateModel>(), new ArrayList<PuchaseModel>(), new ArrayList<CommentModel>());
 
         tasks.add(taskobj);
         tasks.add(taskobj2);
@@ -108,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mAdapter);
-        mAdapter.setOnItemClickListener(MainActivity.this);
+        mAdapter.setOnItemClickListener(TaskActivity.this);
     }
 
     @Override
@@ -122,9 +145,11 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         Bundle bundle1=new Bundle();
         bundle1.putSerializable("ARRAYLIST1",(Serializable)tasks1.getPuchaseModelList());
         intent.putExtra("BUNDLE1",bundle1);
+
+        Bundle bundle2=new Bundle();
+        bundle2.putSerializable("ARRAYLIST2",(Serializable)tasks1.getCommentModelList());
+        intent.putExtra("BUNDLE2",bundle2);
         startActivity(intent);
-
-
     }
 
     @Override

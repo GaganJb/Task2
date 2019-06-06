@@ -1,4 +1,4 @@
-package com.example.task2;
+package com.example.task2.Models;
 
 import java.util.List;
 
@@ -16,8 +16,9 @@ public class Tasks {
         private String status;
         private List<UpdateModel> updateModelList;
         private List<PuchaseModel>  puchaseModelList;
+        private List<CommentModel>  commentModelList;
 
-    public Tasks(String taskdate,String slip_no, String customer_name, String requirement, String people, String task, String time_assigned, String time_work, String task_duration,String status,List<UpdateModel> updateModelList, List<PuchaseModel> puchaseModelList) {
+    public Tasks(String taskdate,String slip_no, String customer_name, String requirement, String people, String task, String time_assigned, String time_work, String task_duration,String status,List<UpdateModel> updateModelList, List<PuchaseModel> puchaseModelList, List<CommentModel> commentModelList) {
         this.slip_no = slip_no;
         this.customer_name = customer_name;
         this.requirement = requirement;
@@ -30,6 +31,7 @@ public class Tasks {
         this.status = status;
         this.updateModelList = updateModelList;
         this.puchaseModelList = puchaseModelList;
+        this.commentModelList = commentModelList;
     }
 
     public String getSlip_no() {
@@ -80,7 +82,14 @@ public class Tasks {
         return puchaseModelList;
     }
 
+
+    public List<CommentModel> getCommentModelList() {
+        return commentModelList;
+    }
+
     public void setUpdateModelList(List<UpdateModel> updateModelList) { this.updateModelList = updateModelList; }
+
+    public void setCommentModelList(List<CommentModel> commentModelList) { this.commentModelList = commentModelList; }
 
     public void setStatus(String status) { this.status = status; }
 

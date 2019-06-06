@@ -1,4 +1,4 @@
-package com.example.task2;
+package com.example.task2.Adapters;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;

@@ -1,4 +1,4 @@
-package com.example.task2;
+package com.example.task2.Adapters;
 
 import android.content.Context;
 
@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.task2.Models.Tasks;
+import com.example.task2.R;
 
 import java.util.List;
 
@@ -27,7 +30,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void setOnItemClickListener(OnItemClickListener listener){
         mListener = listener;
     }
-
 
     public MyAdapter(Context context, List<Tasks> tripData) {
         this.context = context;
@@ -80,21 +82,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             time_assigned = view.findViewById(R.id.textView11);
             timeofwork = view.findViewById(R.id.textView13);
             duration = view.findViewById(R.id.textView15);
-            buttstatus=view.findViewById(R.id.button);
             buttupdate=view.findViewById(R.id.button2);
 
-            //Button Status Implemetations
-            buttstatus.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if(mListener!=null){
-                        int position = getAdapterPosition();
-                        if(position!=RecyclerView.NO_POSITION){
-                            mListener.onItemClick(position);
-                        }
-                    }
-                }
-            });
 
             //Button date Implementations
             view.setOnClickListener(new View.OnClickListener() {

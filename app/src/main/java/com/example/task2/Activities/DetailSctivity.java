@@ -1,16 +1,17 @@
-package com.example.task2;
+package com.example.task2.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
+import com.example.task2.R;
+import com.example.task2.Adapters.ViewPagerAdapter;
+import com.example.task2.fragments.itemcommfragment;
+import com.example.task2.fragments.itempurcfragment;
+import com.example.task2.fragments.itemupdatefragment;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
 
 public class DetailSctivity extends AppCompatActivity {
 Toolbar toolbar;
